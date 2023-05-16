@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'Curso de Fernando Herrera Angular 2023';
+  title = 'Improving Angular 2023';
 }
