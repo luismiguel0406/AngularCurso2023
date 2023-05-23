@@ -7,23 +7,30 @@ import { Character } from '../interfaces/character.interface';
   styleUrls: ['./dbz-page.component.scss'],
 })
 export class DbzPageComponent {
+  public characterList: Character[] = [
+    {
+      name: 'Goku',
+      power: 10000,
+    },
+    {
+      name: 'Vegeta',
+      power: 8000,
+    },
+    {
+      name: 'Freezer',
+      power: 9000,
+    },
+    {
+      name: 'Broly super',
+      power: 9500,
+    },
+  ];
 
-  public characterList:Character[]=[
-    {
-      name:'Goku',
-      power:10000
-    },
-    {
-      name:'Vegeta',
-      power:8000
-    },
-    {
-      name:'Freezer',
-      power:9000
-    },
-    {
-      name:'Broly super',
-      power:9500
-    }
-  ]
+  onNewCharacter(character: Character): void {
+    this.characterList.push(character);
+  }
+
+  onDeleteCharacter(index: number): void {
+    this.characterList.splice(index, 1);
+  }
 }

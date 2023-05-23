@@ -1,7 +1,25 @@
 <h4>Listado de Personajes</h4>
 <ul class="list-group">
-  <li *ngFor="let character of characterList" class="list-group-item">
-    <span>{{ character.name }} </span>
-    <strong>{{ character.power }}</strong>
+  <li
+    *ngFor="
+      let character of characterList;
+      index as i;
+      first as isFirst;
+      last as isLast
+    "
+    class="list-group-item d-flex justify-content-between align-items-center"
+    [ngClass]="{
+      'list-group-item-success': isFirst,
+      'list-group-item-danger': isLast
+    }"
+  >
+    <div>
+      <span>{{ i + 1 }}</span>
+      <span> - </span>
+      <span>{{ character.name }} </span>
+      <strong>{{ character.power }}</strong>
+    </div>
+
+    <button (click)="onDeleteCharacter(i)" class="btn btn-danger">X</button>
   </li>
 </ul>
