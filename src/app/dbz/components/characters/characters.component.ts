@@ -11,12 +11,13 @@ export class CharactersComponent {
   public onNewCharacterEvent: EventEmitter<Character> = new EventEmitter();
 
   public character: Character = {
+    id:'',
     name: '',
     power: 0,
   };
 
   onNewCharacter(): void {
     this.onNewCharacterEvent.emit(this.character);
-    this.character = { name: '', power: 0 };
+    this.character = { id: '', name: '', power: 0 };
   }
 }
